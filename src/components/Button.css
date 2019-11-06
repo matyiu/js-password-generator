@@ -1,0 +1,21 @@
+.button {
+    padding: 10px;
+    border: none;
+    background: white;
+    color: #0f111c;
+    font-size: 1.125em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button--primary {
+    background: #ABF1FF;
+}
+
+.button--border-primary {
+    box-shadow: 0 0 0 2px #ABF1FF;
+}
+
+.button--copy {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}

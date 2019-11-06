@@ -11,14 +11,14 @@ function PasswordGeneratorForm(props) {
             <h1 className="password-generator__title">Random Password Generator</h1>
             <div className="password-generator__password-group">
                 <span className="password-generator__password"></span>
-                <Button>Copy</Button>
+                <Button types={['primary', 'border-primary', 'copy']}>Copy</Button>
             </div>
             <InputRange />
             <Checkbox />
             <Checkbox />
             <Checkbox />
             <Checkbox />
-            <Button>Generate</Button>
+            <Button types={['primary']}>Generate</Button>
         </div>
     );
 }

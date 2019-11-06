@@ -7,9 +7,24 @@ import './PasswordGeneratorForm.css';
 
 function PasswordGeneratorForm(props) {
     const [passwordLength, setPasswordLength] = useState(12);
+    const [uppercase, setUppercase] = useState(true);
+    const [lowercase, setLowercase] = useState(true);
+    const [symbols, setSymbols] = useState(true);
 
     function handlePasswordLength(e) {
         setPasswordLength(e.target.value);
+    }
+
+    function handleUppercase() {
+        setUppercase(!uppercase);
+    }
+
+    function handleLowercase() {
+        setLowercase(!lowercase);
+    }
+
+    function handleSymbols() {
+        setSymbols(!symbols);
     }
 
     return (
@@ -21,10 +36,12 @@ function PasswordGeneratorForm(props) {
             </div>
             <InputRange min={12} max={36} step={1} title="Password Length:"
             currState={passwordLength} onChange={handlePasswordLength} />
-            <Checkbox />
-            <Checkbox />
-            <Checkbox />
-            <Checkbox />
+            <Checkbox title="Include Uppercase?" onChange={handleUppercase}
+            value={uppercase} />
+            <Checkbox title="Include Lowercase?" onChange={handleLowercase}
+            value={lowercase} />
+            <Checkbox title="Include Symbols" onChange={handleSymbols}
+            value={symbols} />
             <Button types={['primary']}>Generate</Button>
         </div>
     );

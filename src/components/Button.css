@@ -5,17 +5,28 @@
     color: #0f111c;
     font-size: 1.125em;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 .button--primary {
-    background: #ABF1FF;
+    background: #BAFFF8;
 }
 
 .button--border-primary {
-    box-shadow: 0 0 0 2px #ABF1FF;
+    box-shadow: 0 0 0 2px #BAFFF8;
 }
 
 .button--copy {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+}
+
+.button--big {
+    padding: 12px 30px;
+}
+
+.button--generate {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.33);
+    margin: 0 auto;
+    display: block;
 }

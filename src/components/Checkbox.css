@@ -2,12 +2,23 @@
     width: 100%;
 }
 
+.checkbox--horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .checkbox__title {
     font-size: 1.125em;
     color: white;
     margin-bottom: 10px;
     display: block;
     font-weight: 500;
+}
+
+.checkbox--horizontal .checkbox__title {
+    margin-bottom: 0;
 }
 
 .checkbox__container {

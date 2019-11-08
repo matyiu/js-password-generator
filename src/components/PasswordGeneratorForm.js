@@ -70,12 +70,12 @@ function PasswordGeneratorForm(props) {
             <InputRange min={12} max={36} step={1} title="Password Length:"
             currState={passwordLength} onChange={handlePasswordLength} />
             <Checkbox title="Include Uppercase?" onChange={handleUppercase}
-            value={uppercase} />
+            value={uppercase} types={['horizontal']} />
             <Checkbox title="Include Lowercase?" onChange={handleLowercase}
-            value={lowercase} />
+            value={lowercase} types={['horizontal']} />
             <Checkbox title="Include Symbols" onChange={handleSymbols}
-            value={symbols} />
-            <Button types={['primary']} onClick={handlePasswordGenerator}>Generate</Button>
+            value={symbols} types={['horizontal']} />
+            <Button types={['primary', 'big', 'generate']} onClick={handlePasswordGenerator}>Generate</Button>
         </div>
     );
 }

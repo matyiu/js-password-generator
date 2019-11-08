@@ -46,10 +46,15 @@ function PasswordGeneratorForm(props) {
             navigator.clipboard.writeText(password);
         } else {
             const input = document.createElement('input');
-            input.style.display = 'none';
+            input.setAttribute('aria-hidden', true);
+            input.setAttribute('tabindex', -1);
+            input.style.position = 'absolute';
+            input.style.left = '-9999px';
             input.value = password;
+            document.body.appendChild(input)
             input.select();
             document.execCommand('copy');
+            document.body.removeChild(input);
         }
 
         setCopyStatus(true);

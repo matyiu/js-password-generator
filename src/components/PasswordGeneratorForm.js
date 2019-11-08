@@ -78,7 +78,7 @@ function PasswordGeneratorForm(props) {
             value={uppercase} types={['horizontal']} />
             <Checkbox title="Include Lowercase?" onChange={handleLowercase}
             value={lowercase} types={['horizontal']} />
-            <Checkbox title="Include Symbols" onChange={handleSymbols}
+            <Checkbox title="Include Symbols?" onChange={handleSymbols}
             value={symbols} types={['horizontal']} />
             <Button types={['primary', 'big', 'generate']} onClick={handlePasswordGenerator}>Generate</Button>
         </div>

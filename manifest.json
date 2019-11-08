@@ -1,0 +1,8 @@
+{
+  "short_name": "Password Generator",
+  "name": "JS Password Generator",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0EB575",
+  "background_color": "#0EB575"
+}

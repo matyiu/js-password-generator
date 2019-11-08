@@ -12,6 +12,7 @@ function PasswordGeneratorForm(props) {
     const [lowercase, setLowercase] = useState(true);
     const [symbols, setSymbols] = useState(true);
     const [password, setPassword] = useState('');
+    const [copyStatus, setCopyStatus] = useState(false);
 
     function handlePasswordLength(e) {
         setPasswordLength(e.target.value);
@@ -40,12 +41,31 @@ function PasswordGeneratorForm(props) {
         setPassword(generatePassword(options));
     }
 
+    function handleCopyToClipboard() {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(password);
+        } else {
+            const input = document.createElement('input');
+            input.style.display = 'none';
+            input.value = password;
+            input.select();
+            document.execCommand('copy');
+        }
+
+        setCopyStatus(true);
+        setTimeout(() => {
+            setCopyStatus(false);
+        }, 3500);
+    }
+
     return (
         <div className="password-generator">
             <h1 className="password-generator__title">Random Password Generator</h1>
             <div className="password-generator__password-group">
                 <span className="password-generator__password">{password}</span>
-                <Button types={['primary', 'border-primary', 'copy']}>Copy</Button>
+                <Button types={['primary', 'border-primary', 'copy']} onClick={handleCopyToClipboard}>
+                    {copyStatus ? 'Copied' : 'Copy'}
+                </Button>
             </div>
             <InputRange min={12} max={36} step={1} title="Password Length:"
             currState={passwordLength} onChange={handlePasswordLength} />

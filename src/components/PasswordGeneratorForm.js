@@ -68,7 +68,7 @@ function PasswordGeneratorForm(props) {
             <h1 className="password-generator__title">Random Password Generator</h1>
             <div className="password-generator__password-group">
                 <span className="password-generator__password">{password}</span>
-                <Button types={['primary', 'border-primary', 'copy']} onClick={handleCopyToClipboard}>
+                <Button types={['primary', 'border-primary', 'copy']} onClick={handleCopyToClipboard} disabled={password === ''}>
                     {copyStatus ? 'Copied' : 'Copy'}
                 </Button>
             </div>
